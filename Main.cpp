@@ -24,6 +24,7 @@ int main() {
 	while (seguir == true) {
 		int opcion;
 		opcion = menu();
+		cout << endl;
 		if(opcion == 1) {
 			string ID = randomS();
 			cout << "Ingrese el nombre de la obra de arte: " << endl;
@@ -129,7 +130,7 @@ int main() {
 			cout << "Cual obra de arte desea mover?" << endl;
 			for (int i = 0; i < museo.size(); ++i)
 			{
-				cout << i << ") " << museo.at(i) -> getNombre();
+				cout << i << ") " << museo.at(i) -> getNombre() << endl;
 			}
 			int pos2;
 			cin >> pos2;
@@ -145,20 +146,13 @@ int main() {
 			cout << "Ingrese el autor que desea buscar: " << endl;
 			string autorAB;
 			cin >> autorAB;
+			cout << "Obras de arte del museo actual: " << endl;
 			for (int i = 0; i < museo.size(); ++i)
 			{
-				cout << "Obras de arte del museo actual: " << endl;
 				if (museo.at(i) -> getAutor() == autorAB)
 				{
-					cout << "Nombre: " << museo.at(i) -> getNombre() << endl;
+					cout << "- " << museo.at(i) -> getNombre() << endl;
 				}
-				cout << endl;
-				cout << "Obras de arte de los otros: " << endl;
-				if (museo.at(i) -> getAutor() == autorAB)
-				{
-					cout << "Nombre: " << museo.at(i) -> getNombre() << endl;
-				}
-				cout << endl;
 			}
 			cout << endl;
 		} else {
