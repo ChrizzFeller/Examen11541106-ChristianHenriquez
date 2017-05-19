@@ -193,7 +193,7 @@ string randomS() {
 	int random;
 	stringstream random1;
 	string random2;
-	for (int i = 0; i < 16; ++i)
+	for (int i = 0; i < 6; ++i)
 	{
 		random = rand() % 15 + 0;
 		if (random == 10)
