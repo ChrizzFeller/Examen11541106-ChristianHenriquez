@@ -36,7 +36,7 @@ void ObrasDA::setAutor(string pAutor) {
 }
 
 string ObrasDA::getFecha() {
-	return nombre;
+	return fechaDI;
 }
 
 void ObrasDA::setFecha(string pFechaDI) {

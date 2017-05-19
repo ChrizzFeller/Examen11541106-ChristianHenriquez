@@ -51,11 +51,12 @@ int main() {
 				cout << "Ingrese genero literario: " << endl;
 				string generoL;
 				cin >> generoL;
-				cout << "Ingrese la epoca; " << endl;
+				cout << "Ingrese la epoca: " << endl;
 				string epoca;
 				cin >> epoca;
 				museo.push_back(new literatura(ID, nombre, autor, fecha, generoL, epoca));
 				cout << "Obra de arte agreagada exitosamente!" << endl;
+				cout << endl;
 			} else if (resp2 == 2)
 			{
 				cout << "Ingrese peso: " << endl;
@@ -66,6 +67,7 @@ int main() {
 				cin >> material;
 				museo.push_back(new esculturas(ID, nombre, autor, fecha, peso, material));
 				cout << "Obra de arte agreagada exitosamente!" << endl;
+				cout << endl;
 			} else if (resp2 == 3)
 			{
 				cout << "Ingrese el material de lienzo: " << endl;
@@ -76,37 +78,43 @@ int main() {
 				cin >> tecnica;
 				museo.push_back(new pinturas(ID, nombre, autor, fecha, materialL, tecnica));
 				cout << "Obra de arte agreagada exitosamente!" << endl;
+				cout << endl;
 			} else {
 				cout << "Ingrese el tipo de terreno en donde esta diseñada: " << endl;
 				string tipoDT;
 				cin >> tipoDT;
 				museo.push_back(new disenosA(ID, nombre, autor, fecha, tipoDT));
 				cout << "Obra de arte agreagada exitosamente!" << endl;
+				cout << endl;
 			}
 		} else if (opcion == 2) {
-			cout << "Obras de arte del museo actual." << endl;
+			cout << "Obras de arte del museo actual: " << endl;
 			for (int i = 0; i < museo.size(); ++i)
 			{
 				cout << "Obra de arte #" << (i + 1) << endl;
-				cout << museo.at(i) -> getID() << endl;
-				cout << museo.at(i) -> getNombre() << endl;
-				cout << museo.at(i) -> getAutor() << endl;
-				cout << museo.at(i) -> getFecha() << endl;
+				cout << "ID: " << museo.at(i) -> getID() << endl;
+				cout << "Nombre: " <<  museo.at(i) -> getNombre() << endl;
+				cout << "Autor: " << museo.at(i) -> getAutor() << endl;
+				cout << "Fecha de ingreso: " << museo.at(i) -> getFecha() << endl;
+				cout << endl;
 			}
-			cout << "Obras de arte de otros museos." << endl;
+			cout << endl;
+			cout << "Obras de arte de otros museos: " << endl;
 			for (int i = 0; i < otrosmuseos.size(); ++i)
 			{
 				cout << "Obra de arte #" << (i + 1) << endl;
-				cout << otrosmuseos.at(i) -> getID() << endl;
-				cout << otrosmuseos.at(i) -> getNombre() << endl;
-				cout << otrosmuseos.at(i) -> getAutor() << endl;
-				cout << otrosmuseos.at(i) -> getFecha() << endl;
+				cout << "ID: " << otrosmuseos.at(i) -> getID() << endl;
+				cout << "Nombre: " << otrosmuseos.at(i) -> getNombre() << endl;
+				cout << "Autor: " << otrosmuseos.at(i) -> getAutor() << endl;
+				cout << "Fecha de ingreso: " << otrosmuseos.at(i) -> getFecha() << endl;
+				cout << endl;
 			}
+			cout << endl;
 		} else if (opcion == 3) {
 			cout << "Cual obra de arte desea borrar?" << endl;
 			for (int i = 0; i < museo.size(); ++i)
 			{
-				cout << i << museo.at(i) -> getNombre();
+				cout << i << ") " << museo.at(i) -> getNombre() << endl;
 			}
 			int pos;
 			cin >> pos;
@@ -116,11 +124,12 @@ int main() {
 			}
 			museo.erase(museo.begin() + pos);
 			cout << "Obra de arte borrada exitosamente!" << endl;
+			cout << endl;
 		} else if (opcion == 4) {
 			cout << "Cual obra de arte desea mover?" << endl;
 			for (int i = 0; i < museo.size(); ++i)
 			{
-				cout << i << museo.at(i) -> getNombre();
+				cout << i << ") " << museo.at(i) -> getNombre();
 			}
 			int pos2;
 			cin >> pos2;
@@ -131,19 +140,30 @@ int main() {
 			otrosmuseos.push_back(museo.at(pos2));
 			museo.erase(museo.begin() + pos2);
 			cout << "Obra de arte movida exitosamente!" << endl;
+			cout << endl;
 		} else if (opcion == 5) {
 			cout << "Ingrese el autor que desea buscar: " << endl;
 			string autorAB;
 			cin >> autorAB;
 			for (int i = 0; i < museo.size(); ++i)
 			{
+				cout << "Obras de arte del museo actual: " << endl;
 				if (museo.at(i) -> getAutor() == autorAB)
 				{
-					cout << museo.at(i) -> getNombre() << endl;
+					cout << "Nombre: " << museo.at(i) -> getNombre() << endl;
 				}
+				cout << endl;
+				cout << "Obras de arte de los otros: " << endl;
+				if (museo.at(i) -> getAutor() == autorAB)
+				{
+					cout << "Nombre: " << museo.at(i) -> getNombre() << endl;
+				}
+				cout << endl;
 			}
+			cout << endl;
 		} else {
 			cout << "Nos vemos luego!" << endl;
+			seguir = false;
 		}
 	}
 
