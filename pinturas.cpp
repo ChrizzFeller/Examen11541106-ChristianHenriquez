@@ -4,7 +4,7 @@
 pinturas::pinturas() {
 }
 
-pinturas::pinturas(string pID, string pNombreI, string pAutor, string pFechaDI, string pMaterial, string pTecnica : ObrasDA(pID, pNombreI, pAutor, pFechaDI)) {
+pinturas::pinturas(string pID, string pNombreI, string pAutor, string pFechaDI, string pMaterial, string pTecnica) : ObrasDA(pID, pNombreI, pAutor, pFechaDI) {
 	material = pMaterial;
 	tecnica = pTecnica;
 }

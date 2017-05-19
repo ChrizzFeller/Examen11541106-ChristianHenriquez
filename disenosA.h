@@ -13,8 +13,9 @@ class disenosA : public ObrasDA {
 		string tipoDT;
 	
 	public:
+		disenosA();
 		disenosA(string, string, string, string, string);
-		~disenosA();
+		//~disenosA();
 		string getTipo();
 		void setTipo(string);
 };

@@ -14,8 +14,9 @@ class pinturas : public ObrasDA {
 		string tecnica;
 	
 	public:
+		pinturas();
 		pinturas(string, string, string, string, string, string);
-		~pinturas();
+		//~pinturas();
 		string getMaterial();
 		void setMaterial(string);
 		string getTecnica();

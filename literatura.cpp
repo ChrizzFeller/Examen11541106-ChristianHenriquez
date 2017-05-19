@@ -4,7 +4,7 @@
 literatura::literatura() {
 }
 
-literatura::literatura(string pID, string pNombreI, string pAutor, string pFechaDI, string pGenero, string pEpoca : ObrasDA(pID, pNombreI, pAutor, pFechaDI)) {
+literatura::literatura(string pID, string pNombreI, string pAutor, string pFechaDI, string pGenero, string pEpoca) : ObrasDA(pID, pNombreI, pAutor, pFechaDI) {
 	genero = pGenero;
 	epoca = pEpoca;
 }

@@ -4,7 +4,7 @@
 ObrasDA::ObrasDA() {
 }
 
-ObrasDA::ObrasDA(string pID, string pNombreI, string pAutor, string pFechaDI) {
+ObrasDA::ObrasDA(string pID, string pNombre, string pAutor, string pFechaDI) {
 	id = pID;
 	nombre = pNombre;
 	autor = pAutor;

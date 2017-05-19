@@ -14,8 +14,9 @@ class literatura : public ObrasDA {
 		string epoca;
 	
 	public:
+		literatura();
 		literatura(string, string, string, string, string, string);
-		~literatura();
+		//~literatura();
 		string getGenero();
 		void setGenero(string);
 		string getEpoca();

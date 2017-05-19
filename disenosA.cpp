@@ -4,7 +4,7 @@
 disenosA::disenosA() {
 }
 
-disenosA::disenosA(string pID, string pNombreI, string pAutor, string pFechaDI, string pTipo : ObrasDA(pID, pNombreI, pAutor, pFechaDI)) {
+disenosA::disenosA(string pID, string pNombreI, string pAutor, string pFechaDI, string pTipo) : ObrasDA(pID, pNombreI, pAutor, pFechaDI) {
 	tipoDT = pTipo;
 }
 

@@ -14,8 +14,9 @@ class esculturas : public ObrasDA {
 		string material;
 	
 	public:
-		disenosA(string, string, string, string, double, string);
-		~disenosA();
+		esculturas();
+		esculturas(string, string, string, string, double, string);
+		//~esculturas();
 		string getMaterial();
 		void setMaterial(string);
 		double getPeso();

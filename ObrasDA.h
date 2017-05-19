@@ -15,8 +15,9 @@ class ObrasDA {
 		string fechaDI;
 	
 	public:
+		ObrasDA();
 		ObrasDA(string, string, string, string);
-		~ObrasDA();
+		//~ObrasDA();
 		string getID();
 		void setID(string);
 		string getNombre();

@@ -4,7 +4,7 @@
 esculturas::esculturas() {
 }
 
-esculturas::esculturas(string pID, string pNombreI, string pAutor, string pFechaDI, double pPeso , string pMaterial : ObrasDA(pID, pNombreI, pAutor, pFechaDI)) {
+esculturas::esculturas(string pID, string pNombreI, string pAutor, string pFechaDI, double pPeso , string pMaterial) : ObrasDA(pID, pNombreI, pAutor, pFechaDI) {
 	peso = pPeso;
 	material = pMaterial;
 }
@@ -21,6 +21,6 @@ string esculturas::getMaterial() {
 	return material;
 }
 
-void esculturas::setPeso(string pMaterial) {
+void esculturas::setMaterial(string pMaterial) {
 	material = pMaterial;
 }
