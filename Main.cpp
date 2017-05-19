@@ -27,6 +27,18 @@ int main() {
 		cout << endl;
 		if(opcion == 1) {
 			string ID = randomS();
+			bool repetido = true;
+			while (repetido == true) {
+				repetido = false;
+				for (int i = 0; i < museo.size(); ++i)
+				{
+					if (ID == museo.at(i) -> getID())
+					{
+						ID = randomS();
+						repetido = true;
+					}
+				}
+			}
 			cout << "Ingrese el nombre de la obra de arte: " << endl;
 			string nombre;
 			cin >> nombre;
