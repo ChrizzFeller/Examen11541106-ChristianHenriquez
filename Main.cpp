@@ -20,6 +20,7 @@ int main() {
 	vector<ObrasDA*> museo;
 	vector<ObrasDA*> otrosmuseos;
 	bool seguir = true;
+	cout << "Bienvenido al Museo de arte Británico." << endl;
 	while (seguir == true) {
 		int opcion;
 		opcion = menu();
@@ -41,7 +42,7 @@ int main() {
 			cout << "4) Diseño Arquitectonico" << endl;
 			int resp2;
 			cin >> resp2;
-			while (resp2 < 0 || resp2 > 4) {
+			while (resp2 < 1 || resp2 > 4) {
 				cout << "Opcion invalida, ingrese opcion de nuevo!" << endl;
 				cin >> resp2;
 			}
@@ -83,17 +84,64 @@ int main() {
 				cout << "Obra de arte agreagada exitosamente!" << endl;
 			}
 		} else if (opcion == 2) {
+			cout << "Obras de arte del museo actual." << endl;
+			for (int i = 0; i < museo.size(); ++i)
+			{
+				cout << "Obra de arte #" << (i + 1) << endl;
+				cout << museo.at(i) -> getID() << endl;
+				cout << museo.at(i) -> getNombre() << endl;
+				cout << museo.at(i) -> getAutor() << endl;
+				cout << museo.at(i) -> getFecha() << endl;
+			}
+			cout << "Obras de arte de otros museos." << endl;
+			for (int i = 0; i < otrosmuseos.size(); ++i)
+			{
+				cout << "Obra de arte #" << (i + 1) << endl;
+				cout << otrosmuseos.at(i) -> getID() << endl;
+				cout << otrosmuseos.at(i) -> getNombre() << endl;
+				cout << otrosmuseos.at(i) -> getAutor() << endl;
+				cout << otrosmuseos.at(i) -> getFecha() << endl;
+			}
+		} else if (opcion == 3) {
+			cout << "Cual obra de arte desea borrar?" << endl;
 			for (int i = 0; i < museo.size(); ++i)
 			{
 				cout << i << museo.at(i) -> getNombre();
 			}
+			int pos;
+			cin >> pos;
+			while (pos < 0 || pos > museo.size()) {
+				cout << "Opcion invalida, ingrese opcion de nuevo!" << endl;
+				cin >> pos;
+			}
 			museo.erase(museo.begin() + pos);
-		} else if (opcion == 3) {
-			
+			cout << "Obra de arte borrada exitosamente!" << endl;
 		} else if (opcion == 4) {
-
+			cout << "Cual obra de arte desea mover?" << endl;
+			for (int i = 0; i < museo.size(); ++i)
+			{
+				cout << i << museo.at(i) -> getNombre();
+			}
+			int pos2;
+			cin >> pos2;
+			while (pos2 < 0 || pos2 > museo.size()) {
+				cout << "Opcion invalida, ingrese opcion de nuevo!" << endl;
+				cin >> pos2;
+			}
+			otrosmuseos.push_back(museo.at(pos2));
+			museo.erase(museo.begin() + pos2);
+			cout << "Obra de arte movida exitosamente!" << endl;
 		} else if (opcion == 5) {
-
+			cout << "Ingrese el autor que desea buscar: " << endl;
+			string autorAB;
+			cin >> autorAB;
+			for (int i = 0; i < museo.size(); ++i)
+			{
+				if (museo.at(i) -> getAutor() == autorAB)
+				{
+					cout << museo.at(i) -> getNombre() << endl;
+				}
+			}
 		} else {
 			cout << "Nos vemos luego!" << endl;
 		}
